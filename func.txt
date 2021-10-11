@@ -1,0 +1,25 @@
+function addLineBreaks()
+
+{
+
+  var form = FormApp.getActiveForm(); 
+
+  
+
+  // find form items you need 
+
+  var questions = form.getItems(FormApp.ItemType.MULTIPLE_CHOICE);
+
+  
+
+  for(i = 0; i < questions.length; i++)
+
+  {
+
+    var title = questions[i].getTitle();
+
+    questions[i].setTitle(title.split("..").join("\n"));
+
+  }
+
+}
